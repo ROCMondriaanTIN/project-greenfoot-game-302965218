@@ -10,6 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int goldcoin;
 
     public Hero() {
         super();
@@ -22,7 +23,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        getGoldCoin();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -37,7 +38,23 @@ public class Hero extends Mover {
             }
         }
     }
-
+    
+    public String Inspect ()
+    {
+        String Inspect="X:"+this.getX()+"Y:"+this.getY();
+        return Inspect;
+    }
+    
+    public int getGoldCoin()
+    {
+    if(isTouching(GoldCoin.class))
+    {
+    removeTouching(GoldCoin.class);
+    goldcoin++;
+    }
+    return goldcoin;
+    }
+    
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
             velocityY = -20;
