@@ -8,7 +8,7 @@
  "margin":0,
  "name":"world",
  "spacing":0,
- "tilecount":144,
+ "tilecount":160,
  "tiledversion":"1.2.0",
  "tileheight":128,
  "tiles":[
@@ -27,20 +27,20 @@
         {
          "id":2,
          "image":"..\/images\/boxCoin.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":3,
          "image":"..\/images\/boxExplosive.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":4,
          "image":"..\/images\/boxItem.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":5,
@@ -51,26 +51,26 @@
         {
          "id":6,
          "image":"..\/images\/grassCenter.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":7,
          "image":"..\/images\/grassLeft.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":8,
          "image":"..\/images\/grassMid.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":9,
          "image":"..\/images\/grassRight.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":10,
@@ -87,20 +87,20 @@
         {
          "id":12,
          "image":"..\/images\/signExit.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":13,
          "image":"..\/images\/signLeft.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":14,
          "image":"..\/images\/signRight.png",
-         "imageheight":70,
-         "imagewidth":70
+         "imageheight":128,
+         "imagewidth":128
         }, 
         {
          "id":15,
@@ -873,6 +873,102 @@
         {
          "id":143,
          "image":"..\/..\/..\/..\/Pictures\/PNG\/Enemies\/sawHalf_move.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":144,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planet.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":145,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCenter.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":146,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCenter_rounded.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":147,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCliff_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":148,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCliff_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":149,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCliffAlt_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":150,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCorner_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":151,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetCorner_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":152,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetHalf.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":153,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetHalf_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":154,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetHalf_mid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":155,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetHalf_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":156,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetHill_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":157,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetLeft.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":158,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetMid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":159,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetRight.png",
          "imageheight":128,
          "imagewidth":128
         }],

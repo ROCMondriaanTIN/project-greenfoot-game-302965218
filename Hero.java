@@ -11,6 +11,8 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private int goldcoin;
+    private boolean drown;
+    private boolean inWater;
 
     public Hero() {
         super();
@@ -37,14 +39,57 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
+        for (Actor Spikes : getIntersectingObjects(Spikes.class)){
+            if (Spikes !=null){
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+        for (Actor Water : getIntersectingObjects(Water.class)){
+            if (Water !=null){
+                getWorld().removeObject(this);
+                break;
+            }
+        }
     }
-    
-    public String Inspect ()
+    public boolean onGround (){
+        if (drown == true ){
+       Actor under = getOneObjectAtOffset (0,getImage().getHeight()/2,Tile.class);
+       return under == null;}
+        else {
+            Actor under = getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
+            return under!= null;
+        }
+    }
+    public boolean inWater(){
+        Actor ignore = getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
+        return ignore != null;
+    }
+    public void handInput(){
+        if (Greenfoot.isKeyDown("W")){
+            if (onGround ()==true){
+                if (inWater()!=true){
+                    velocityY=4;
+                    drown= true;}
+                else {
+                    velocityY=-17;
+                }
+            }
+    }
+   
+    if(Greenfoot.isKeyDown("a")){
+        velocityX=-6;
+        if (velocityY!=0){
+            setImage("p1_jumpB.png");
+        }
+    }
+}
+    public String Inspect()
     {
         String Inspect="X:"+this.getX()+"Y:"+this.getY();
         return Inspect;
     }
-    
     public int getGoldCoin()
     {
     if(isTouching(GoldCoin.class))
@@ -56,14 +101,16 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -20;
+        if (Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w")) {
+            velocityY = -12;
+        }else if (Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s")) {
+            velocityY = 12;
         }
 
-        if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
-        } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+        if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")) {
+            velocityX = -10;
+        } else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
+            velocityX = 10;
         }
     }
 
