@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World {
 
     private CollisionEngine ce;
-
+    //10 redenen waarom chiara school haat
     /**
      * Constructor for objects of class MyWorld.
      *
