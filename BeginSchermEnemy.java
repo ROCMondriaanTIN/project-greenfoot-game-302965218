@@ -1,11 +1,10 @@
-
 import greenfoot.*;
 
 /**
  *
  * @author R. Springer
  */
-public class Hero extends Mover {
+public class BeginSchermEnemy extends Mover {
 
     private final double gravity;
     private final double acc;
@@ -14,18 +13,17 @@ public class Hero extends Mover {
     private boolean drown;
     private boolean inWater;
 
-    public Hero() {
+    public BeginSchermEnemy() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1.png");
+        setImage("C:/Users/302965218/Pictures/PNG/Enemies/wormPink.png");
     }
 
     @Override
     public void act() {
         handleInput();
-        opGrond();
         getGoldCoin();
         velocityX *= drag;
         velocityY += acc;
@@ -34,25 +32,6 @@ public class Hero extends Mover {
         }
         applyVelocity();
 
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                getWorld().removeObject(this);
-                break;
-            }
-        }
-        
-        for (Actor Spikes : getIntersectingObjects(Spikes.class)){
-            if (Spikes !=null){
-                getWorld().removeObject(this);
-                return;
-            }
-        }
-        for (Actor Water : getIntersectingObjects(Water.class)){
-            if (Water !=null){
-                getWorld().removeObject(this);
-                break;
-            }
-        }
     }
     
         public boolean opGrond() {
@@ -109,7 +88,8 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")) {
             velocityX = -10;
-        } else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
+        } //else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
+            if (true){
             velocityX = 10;
         }
     }

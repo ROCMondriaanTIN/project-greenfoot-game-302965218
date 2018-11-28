@@ -5,7 +5,7 @@ import greenfoot.*;
  *
  * @author R. Springer
  */
-public class Hero extends Mover {
+public class BeginSchermHero extends Mover {
 
     private final double gravity;
     private final double acc;
@@ -14,7 +14,7 @@ public class Hero extends Mover {
     private boolean drown;
     private boolean inWater;
 
-    public Hero() {
+    public BeginSchermHero() {
         super();
         gravity = 9.8;
         acc = 0.6;
@@ -25,7 +25,6 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        opGrond();
         getGoldCoin();
         velocityX *= drag;
         velocityY += acc;
@@ -109,7 +108,8 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")) {
             velocityX = -10;
-        } else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
+        } //else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
+            if (true){
             velocityX = 10;
         }
     }
