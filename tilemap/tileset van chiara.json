@@ -8,9 +8,9 @@
  "margin":0,
  "name":"world",
  "spacing":0,
- "tilecount":160,
+ "tilecount":165,
  "tiledversion":"1.2.0",
- "tileheight":128,
+ "tileheight":648,
  "tiles":[
         {
          "id":0,
@@ -971,8 +971,38 @@
          "image":"..\/..\/..\/..\/Pictures\/PNG\/Ground\/Planet\/planetRight.png",
          "imageheight":128,
          "imagewidth":128
+        }, 
+        {
+         "id":160,
+         "image":"..\/..\/..\/..\/Pictures\/Saved Pictures\/beginscherm.png",
+         "imageheight":648,
+         "imagewidth":1152
+        }, 
+        {
+         "id":161,
+         "image":"..\/..\/..\/..\/Pictures\/play button.jpg",
+         "imageheight":44,
+         "imagewidth":174
+        }, 
+        {
+         "id":162,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Players\/128x256\/Pink\/alienPink_front.png",
+         "imageheight":256,
+         "imagewidth":128
+        }, 
+        {
+         "id":163,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Players\/Variable sizes\/Pink\/alienPink_front.png",
+         "imageheight":188,
+         "imagewidth":131
+        }, 
+        {
+         "id":164,
+         "image":"..\/..\/..\/..\/Pictures\/PNG\/Enemies\/wormPink.png",
+         "imageheight":128,
+         "imagewidth":128
         }],
- "tilewidth":128,
+ "tilewidth":1152,
  "type":"tileset",
  "version":1.2
 }
