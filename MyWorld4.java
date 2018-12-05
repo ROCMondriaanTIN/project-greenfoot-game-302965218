@@ -99,8 +99,8 @@ private CollisionEngine ce;
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 300, 1575);
-        addObject(new Enemy(), 600000, 1550);
+        addObject(hero, 72, 1693);
+        addObject(new Enemy(), 600000, 1693);
         //10 redenen waarom chiara echt stom is
         addObject(new GoldCoin(),400,1575);
         addObject (new GoldCoin(),800,1575);

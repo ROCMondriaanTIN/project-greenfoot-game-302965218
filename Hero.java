@@ -13,6 +13,10 @@ public class Hero extends Mover {
     private int goldcoin;
     private boolean drown;
     private boolean inWater;
+    int x = 63;
+    int y = 33;
+    
+    Scorebord sb;
 
     public Hero() {
         super();
@@ -26,9 +30,20 @@ public class Hero extends Mover {
     public void act() {
         handleInput();
         opGrond();
+        positie();
+        checkpoint();
         getGoldCoin();
         velocityX *= drag;
         velocityY += acc;
+        
+        if(sb == null){
+        sb= new Scorebord ();
+        getWorld().addObject(sb,-10,-10);
+      
+        
+        }
+            
+        
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -36,25 +51,35 @@ public class Hero extends Mover {
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                //getWorld().removeObject(this);
+                setLocation(250,1275);
+                sb.HartjeErAf();
                 break;
             }
         }
         
         for (Actor Spikes : getIntersectingObjects(Spikes.class)){
             if (Spikes !=null){
-                getWorld().removeObject(this);
+                //getWorld().removeObject(this);
+                setLocation(250,1275);
+                sb.HartjeErAf();
                 return;
             }
         }
         for (Actor Water : getIntersectingObjects(Water.class)){
             if (Water !=null){
-                getWorld().removeObject(this);
+               // getWorld().removeObject(this);
+               setLocation(250,1275);
+               sb.HartjeErAf();
                 break;
             }
         }
     }
+    public String positie(){
+    String k= "X"+getX()+" "+"Y"+getY();
+    return k ;
     
+    }
         public boolean opGrond() {
         Actor onder = getOneObjectAtOffset(0, getImage().getHeight() / 2, Tile.class);
         Tile tile = (Tile) onder;
@@ -101,16 +126,17 @@ public class Hero extends Mover {
     
     public void handleInput() {
         if (Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w")) {
-         
-              velocityY = -12;
+         {
+            if (opGrond ()==true)
+              velocityY = -20;}
         }else if (Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s")) {
-            velocityY = 12;
+            velocityY = 20;
         }
 
         if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")) {
-            velocityX = -10;
+            velocityX = -15;
         } else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
-            velocityX = 10;
+            velocityX = 15;
         }
     }
 
@@ -120,5 +146,18 @@ public class Hero extends Mover {
 
     public int getHeight() {
         return getImage().getHeight();
+    }
+    public void checkpoint(){
+      if (isTouching(Checkpoint.class)){
+    x=getX();
+    y=getY();
+    }
+}
+    public void Spikes ()
+    {if (isTouching (Spikes.class))
+        {
+            setLocation(x,y);                                                                                   
+    }
+    
     }
 }

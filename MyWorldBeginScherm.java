@@ -80,7 +80,7 @@ private CollisionEngine ce;
     }
 public void handleInput() {
 
-        if (Greenfoot.isKeyDown("k"))
+        if (Greenfoot.isKeyDown("enter"))
         {
           MyWorld w = new MyWorld();
                 Greenfoot.setWorld(w);

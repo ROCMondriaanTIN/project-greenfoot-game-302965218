@@ -602,16 +602,23 @@ public class TileFactory {
     tile = new ExitSign("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,146);
      tile.isSolid = false;
       break;
+      
+    
     case 147:
     tile = new ExitSign("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,147);
      tile.isSolid = false;
      break;
+     
     default:
     tile= new Tile ("grassMid.png",TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
     tile.isSolid = true;
     break;
 case 148:
 tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+     tile.isSolid = false;
+    break;
+    case 168:
+tile = new Tile("flagBlue1.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
      tile.isSolid = false;
     break;
 
