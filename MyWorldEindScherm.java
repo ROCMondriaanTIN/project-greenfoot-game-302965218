@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorldEindScherm extends World
 {
+private CollisionEngine ce;
 
     /**
      * Constructor for objects of class MyWorldEindScherm.
@@ -19,3 +20,4 @@ public class MyWorldEindScherm extends World
         super(600, 400, 1); 
     }
 }
+   

@@ -15,9 +15,18 @@ public class Hero extends Mover {
     private boolean inWater;
     int x = 63;
     int y = 33;
+    int frame = 1;
+    int animationTimer = 0;
+    int animationTimerFrame = 10;
+    int kleur = 1;
+    int direction = 2;
+    int doubleJump = 0;
     
+     public boolean left=true;
+    public boolean mirror=true;
     Scorebord sb;
-
+int spring = -16;
+    
     public Hero() {
         super();
         gravity = 9.8;
@@ -25,10 +34,56 @@ public class Hero extends Mover {
         drag = 0.8;
         setImage("p1.png");
     }
+ public void Enemy(){
 
+        switch(frame){
+            case 1:
+            setImage("p1_walk01.png");
+            break;
+            case 2:
+            setImage("p1_walk02.png");
+            break;
+            case 3:
+            setImage("p1_walk03.png");
+            break;
+            case 4:
+            setImage("p1_walk04.png");
+            break;
+            case 5 :
+            setImage("p1_walk05.png");
+            case 6 :
+            setImage("p1_walk06.png");
+            break;
+            case 7:
+            setImage("p1_walk07.png");
+            break;
+            case 8 :
+            setImage("p1_walk08.png");
+            case 9 :
+            setImage("p1_walk09.png");
+            break;
+            case 10:
+            setImage("p1_walk10.png");
+            break;
+            case 11:
+            setImage("p1_walk11.png");
+
+            frame=0;
+            break;   
+        }
+        frame++;
+        mirrorImage();}
+            public void mirrorImage(){
+        if (mirror && left){ 
+            getImage().mirrorHorizontally();
+        }
+        else if (!mirror && left){
+            getImage().mirrorHorizontally();
+        }
+    }
     @Override
     public void act() {
-        handleInput();
+       handInput();
         opGrond();
         positie();
         checkpoint();
@@ -80,6 +135,8 @@ public class Hero extends Mover {
     return k ;
     
     }
+     boolean onGround(){Actor under = getOneObjectAtOffset(0,getImage().getHeight()/2, Tile.class);
+        return under != null;}
         public boolean opGrond() {
         Actor onder = getOneObjectAtOffset(0, getImage().getHeight() / 2, Tile.class);
         Tile tile = (Tile) onder;
@@ -91,6 +148,37 @@ public class Hero extends Mover {
         return ignore != null;
     }
     public void handInput(){
+        
+        if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("space"))&&onGround() == true) {
+            setImage("p1_jump.png");
+            Greenfoot.playSound("jump.mp3");
+
+            velocityY = spring;
+              
+        }
+        if(onGround() == true){
+            setImage("p1.png");}
+        if ((Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s"))) {
+            setImage("p1_duck.png");
+            velocityX =2;
+            
+        }
+        if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("space"))){
+            setImage("p1.png");
+            }
+                if ((Greenfoot.isKeyDown("left")||Greenfoot.isKeyDown("a"))) {
+
+            velocityX = -10;  
+            left=true;
+            Enemy();
+        }  if ((Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d"))) {
+            velocityX =10;
+           
+            Enemy();
+            left=false;
+        }
+        
+        
         if (Greenfoot.isKeyDown("W")){
             if (opGrond ()==true){
                 if (inWater()!=true){
@@ -124,21 +212,22 @@ public class Hero extends Mover {
     return goldcoin;
     }
     
-    public void handleInput() {
-        if (Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w")) {
-         {
-            if (opGrond ()==true)
-              velocityY = -20;}
-        }else if (Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s")) {
-            velocityY = 20;
+    
+
+
+
+
+    public void animateJump() {
+
+        if (velocityY != 0) {
+
+            setImage("alien" + kleur + "_jump" + direction + ".png");
+
         }
 
-        if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")) {
-            velocityX = -15;
-        } else if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d")) {
-            velocityX = 15;
-        }
     }
+
+
 
     public int getWidth() {
         return getImage().getWidth();
